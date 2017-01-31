@@ -1,0 +1,14 @@
+<h1> Edit Competency </h1>
+<%= form_for @competency, url: {controller: :emp_competencies, action: :update} , method: :patch do |f| %>
+	<p>
+		<%= f.label :product_name %><br />
+		<%= @product.product_name%>
+	</p>
+
+	<p>
+		<%= f.label :competency_level %><br />
+		<%= f.text_area :competency_level%>
+	</p>
+	
+	<p><%= f.submit :Submit%></p>
+<%end%>

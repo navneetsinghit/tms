@@ -1,0 +1,11 @@
+<h1>Add Product</h1>
+<%= form_for @product, url: products_path, method: "post" do |f| %>
+
+<p>
+	<%= f.label :product_name %><br />
+	<%= f.text_field :product_name%>
+	<%= f.submit :Submit%>
+</p>
+<%= link_to "Back", products_path %>
+<% end %>
+
