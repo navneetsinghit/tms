@@ -1,0 +1,18 @@
+<h1>Employee Competency</h1>
+<p> User Name </p>
+<%= "#{current_user.first_name} #{current_user.last_name}" %>
+<br><br>
+<table>
+	<tr>
+		<th>Product Name</th>
+		<th>Competency Level</th>
+		<th>Edit</th>
+	</tr>
+	<% @products.each do |product| %>
+	<tr>
+		<td><%= product.product_name %></td>
+		<td><%= show_competency_level(product.id) %></td>
+		<td><%= link_to 'Edit', edit_emp_competency_path(product.id) %> </td>
+	</tr>
+	<%end%>
+</table>

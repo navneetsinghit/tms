@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'competencies/index'
+
+ 	resources :products
   get 'dashboard/index'
 	authenticated :user do
     root :to => "dashboard#index"
@@ -9,5 +12,7 @@ Rails.application.routes.draw do
 		passwords: 'users/passwords',
 		registrations: 'users/registrations'
   }
+
+  resources :emp_competencies, only: [:index,:edit,:update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
