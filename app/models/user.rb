@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
 	has_many :competencies
 	has_many :products, through: :competencies
   # Include default devise modules. Others available are:
