@@ -48,6 +48,6 @@ private
 	end
 
 	def find_competency
-    	@competency = current_user.competencies.find(params[:id] )
+    	@competency = current_user.competencies.find_by(product_id: params[:id] )
   	end
 end

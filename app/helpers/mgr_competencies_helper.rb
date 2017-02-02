@@ -1,0 +1,2 @@
+module MgrCompetenciesHelper
+end
