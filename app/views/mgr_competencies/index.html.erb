@@ -1,1 +1,22 @@
 <h1> Manager Competencies </h1>
+<table>
+	<tr>
+		<th> Employee Name </th>
+		<% @products.each do |product|%>
+			<th> <%= product.product_name%> </th>
+		<%end%>
+	</tr>
+	<% @employees.each do |employee|%>
+		<tr>
+		
+				<td> <%= link_to show_emp_name(employee), user_emp_competencies_path(employee.id)%></td>
+			<% @products.each do |product|%>
+				<td> <%= show_emp_competency_level(employee,product.id)%></td>
+			<%end%>
+	
+		</tr>
+	<%end%>
+</table>
+<p>
+	<%= link_to("Back", root_url) %>
+</p>
