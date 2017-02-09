@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'competencies/index'
 
  	resources :products
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
 		registrations: 'users/registrations'
   }
 
-  resources :emp_competencies, only: [:index,:edit,:update]
+  resources :users do
+    resources :emp_competencies, only: [:index,:edit,:update]
+  end
+
+  resources :mgr_competencies, only: [:index,:edit,:update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
