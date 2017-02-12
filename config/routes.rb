@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'competencies/index'
 
  	resources :products
+  resources :week
   get 'dashboard/index'
 	authenticated :user do
     root :to => "dashboard#index"

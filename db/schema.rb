@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170131072027) do
+ActiveRecord::Schema.define(version: 20170209075015) do
 
   create_table "competencies", force: :cascade do |t|
     t.integer  "competency_level"
@@ -63,6 +63,23 @@ ActiveRecord::Schema.define(version: 20170131072027) do
     t.integer "user_id"
     t.integer "role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+  end
+
+  create_table "weekly_reports", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "week_id"
+    t.text     "highlights"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_weekly_reports_on_user_id"
+    t.index ["week_id"], name: "index_weekly_reports_on_week_id"
+  end
+
+  create_table "weeks", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
