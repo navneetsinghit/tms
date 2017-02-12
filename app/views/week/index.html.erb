@@ -1,0 +1,15 @@
+<h1>Week#index</h1>
+<%= link_to 'Add New Week', new_week_path %>
+<table>
+	<tr>
+		<th>Start Date</th>
+		<th>Start End</th>
+	</tr>
+	<% @weeks.each do |week| %>
+	<tr>
+		<td><%=week.start_date%></td>
+		<td><%=week.end_date%></td>
+		<td><%= link_to 'Delete', week_path(week), method: :delete, data: {confirm: 'Are you sure?'}%></td>
+	</tr>
+	<%end%>
+</table>

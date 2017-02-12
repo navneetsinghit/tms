@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TmsWorking</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>TmsWorking</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script>
+    $( function() {
+      $( ".datepicker" ).datepicker();
+    } );
+  </script>
+</head>
 
-  <body>
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>  
-    <%= yield %>
-    <br>
-    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-  </body>
+<body>
+ <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>  
+ <%= yield %>
+ <br>
+ <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+</body>
 </html>

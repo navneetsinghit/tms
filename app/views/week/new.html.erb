@@ -1,0 +1,12 @@
+<h1>Add Week</h1>
+<%= form_for @week, url: week_index_path, method: "post" do |f| %>
+
+<p>
+	<%= f.label :start_date %>
+	<%= f.text_field :start_date, class: 'datepicker'%> <br />
+	<%= f.label :end_date %>
+	<%= f.text_field :end_date, class: 'datepicker'%><br />
+	<%= f.submit :Submit%>
+</p>
+<%= link_to "Back", week_index_path %>
+<% end %>
